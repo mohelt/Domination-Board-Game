@@ -13,6 +13,16 @@
 void initialize_players(player players[PLAYERS_NUM]){
 
     // implement here the functionality to initialize the players
+        players[0].player_color = RED;
+        players[1].player_color = GREEN;
+        players[0].piecesPlayerCaptured = 0;
+        players[1].piecesPlayerCaptured = 0;
+        players[0].piecesPlayerOwns = 16;
+        players[1].piecesPlayerOwns = 16;
+        printf("Please enter a name for Player 1 and Player 2.\n ");
+        scanf("%s %s",&players[0].playerName,&players[1].playerName);
+        printf("Player 1 name: %s \n player 1 color: %d (0 = red,1 = green)\n ",players[0].playerName,players[0].player_color);
+        printf("Player 2 name: %s \n player 2 color: %d (0 = red,1 = green)\n",players[1].playerName,players[1].player_color);
 
 }
 

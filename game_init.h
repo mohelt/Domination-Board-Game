@@ -10,7 +10,8 @@
 
 #define BOARD_SIZE 8
 #define PLAYERS_NUM 2
-
+#define PLAYER_NAME_MAX_LENGTH 15
+#define INITIAL_NUMBER_OF_PIECES 16
 //colors that a piece can have
 typedef enum color {
     RED,
@@ -36,6 +37,9 @@ typedef struct player{
      * number of own pieces kept.
      *
     */
+    char playerName[PLAYER_NAME_MAX_LENGTH];
+    int piecesPlayerOwns;
+    int piecesPlayerCaptured;
 }player;
 
 // A piece
