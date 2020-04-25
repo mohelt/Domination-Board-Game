@@ -6,29 +6,29 @@
 
 #IncludeRegexTransform: 
 
-/Users/liliana1/CLionProjects/Focus/game_init.c
+C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/game_init.c
 stdio.h
 -
 stdlib.h
 -
 game_init.h
-/Users/liliana1/CLionProjects/Focus/game_init.h
+C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/game_init.h
 
-/Users/liliana1/CLionProjects/Focus/game_init.h
+C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/game_init.h
 
-/Users/liliana1/CLionProjects/Focus/input_output.c
+C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/input_output.c
 stdio.h
 -
 input_output.h
-/Users/liliana1/CLionProjects/Focus/input_output.h
+C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/input_output.h
 
-/Users/liliana1/CLionProjects/Focus/input_output.h
+C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/input_output.h
 game_init.h
-/Users/liliana1/CLionProjects/Focus/game_init.h
+C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/game_init.h
 
-/Users/liliana1/CLionProjects/Focus/main.c
+C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/main.c
 stdio.h
 -
 input_output.h
-/Users/liliana1/CLionProjects/Focus/input_output.h
+C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/input_output.h
 

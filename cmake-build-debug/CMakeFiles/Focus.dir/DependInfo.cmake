@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/liliana1/CLionProjects/Focus/game_init.c" "/Users/liliana1/CLionProjects/Focus/cmake-build-debug/CMakeFiles/Focus.dir/game_init.c.o"
-  "/Users/liliana1/CLionProjects/Focus/input_output.c" "/Users/liliana1/CLionProjects/Focus/cmake-build-debug/CMakeFiles/Focus.dir/input_output.c.o"
-  "/Users/liliana1/CLionProjects/Focus/main.c" "/Users/liliana1/CLionProjects/Focus/cmake-build-debug/CMakeFiles/Focus.dir/main.c.o"
+  "C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/game_init.c" "C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/cmake-build-debug/CMakeFiles/Focus.dir/game_init.c.obj"
+  "C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/input_output.c" "C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/cmake-build-debug/CMakeFiles/Focus.dir/input_output.c.obj"
+  "C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/main.c" "C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/cmake-build-debug/CMakeFiles/Focus.dir/main.c.obj"
   )
-set(CMAKE_C_COMPILER_ID "AppleClang")
+set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
