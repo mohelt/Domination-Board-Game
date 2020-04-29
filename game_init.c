@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "game_init.h"
 
 void initialize_players(player players[PLAYERS_NUM]){
@@ -15,12 +16,19 @@ void initialize_players(player players[PLAYERS_NUM]){
     // implement here the functionality to initialize the players
         players[0].player_color = RED;
         players[1].player_color = GREEN;
+
         players[0].piecesPlayerCaptured = 0;
         players[1].piecesPlayerCaptured = 0;
-        players[0].piecesPlayerOwns = 16;
-        players[1].piecesPlayerOwns = 16;
-        printf("Please enter a name for Player 1 and Player 2.\n ");
-        scanf("%s %s",&players[0].playerName,&players[1].playerName);
+
+        players[0].piecesPlayerOwns = 18;
+        players[1].piecesPlayerOwns = 18;
+
+        players[0].playerTurn = true;
+        players[1].playerTurn = false;
+        printf("Please enter a name for Player 1.\n ");
+        scanf("%s",&players[0].playerName);
+        printf("Please enter a name for Player 2.\n ");
+        scanf("%s",&players[1].playerName);
         printf("Player 1 name: %s \n player 1 color: %d (0 = red,1 = green)\n ",players[0].playerName,players[0].player_color);
         printf("Player 2 name: %s \n player 2 color: %d (0 = red,1 = green)\n",players[1].playerName,players[1].player_color);
 
@@ -89,5 +97,39 @@ void initialize_board(square board [BOARD_SIZE][BOARD_SIZE]){
     }
 
 
+}
+
+//Function to create the player turns
+void player_turns(player players[PLAYERS_NUM]){
+    bool gameWon = false;
+    if(gameWon == true){
+
+    }
+    int turn = 1;
+
+    while(turn <20)
+    {
+
+        if (players[0].playerTurn == true)
+        {
+            //player One play
+            printf("Player 1 turn:\n");
+            turn++;
+        }
+        else
+        {
+            //player Two play
+            printf("Player 2 turn:\n");
+            turn++;
+        }
+        if (turn % 2 == 0)
+        {
+            players[0].playerTurn = false;
+        }
+        else
+            {
+                players[0].playerTurn = true;
+            }
+    }
 }
 

@@ -7,7 +7,7 @@
 
 #endif //FOCUS_GAME_INIT_H
 
-
+#include <stdbool.h>
 #define BOARD_SIZE 8
 #define PLAYERS_NUM 2
 #define PLAYER_NAME_MAX_LENGTH 15
@@ -40,6 +40,8 @@ typedef struct player{
     char playerName[PLAYER_NAME_MAX_LENGTH];
     int piecesPlayerOwns;
     int piecesPlayerCaptured;
+    bool playerTurn;
+
 }player;
 
 // A piece
@@ -72,6 +74,8 @@ void initialize_players(player players[PLAYERS_NUM]);
 //Function to create the board
 void initialize_board(square board[BOARD_SIZE][BOARD_SIZE]);
 
+//Function to create the player turns
+void player_turns(player players[PLAYERS_NUM]);
 
 
 

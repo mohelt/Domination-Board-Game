@@ -18,5 +18,7 @@ int main() {
     initialize_board(board);
 
     print_board(board);
+
+    player_turns(players);
     return 0;
 }
