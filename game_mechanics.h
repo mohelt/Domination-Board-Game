@@ -21,3 +21,7 @@ void player_moves(player players[PLAYERS_NUM],square board[BOARD_SIZE][BOARD_SIZ
 bool check_piece_possible(player players[PLAYERS_NUM],square board[BOARD_SIZE][BOARD_SIZE],int z,int i,int j,bool notChosenPiece);
 
 bool check_move_possible(player players[PLAYERS_NUM],square board[BOARD_SIZE][BOARD_SIZE],int z,int k, int l,bool chosenPlaceToMove);
+
+struct piece * pop(square board[BOARD_SIZE][BOARD_SIZE],int i,int j, int k, int l);
+
+struct piece * push(square board[BOARD_SIZE][BOARD_SIZE],int i, int j,struct piece * stack);

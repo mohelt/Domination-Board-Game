@@ -108,16 +108,17 @@ bool check_move_possible(player players[PLAYERS_NUM],square board[BOARD_SIZE][BO
     }
     if(moveAllowed == true){
         printf("Successfully chosen a piece.\n");
+        pop(board,i,j,k,l);
         chosenPlaceToMove = true;
     }
     return chosenPlaceToMove;
 }
-struct piece * push(int value, struct piece *stack){
-    struct piece *curr = stack;
-    stack = malloc(sizeof(piece));
-    stack->p_color = value;
-    stack->next = curr;
-    return stack;
+struct piece * push(square board[BOARD_SIZE][BOARD_SIZE],int i,int j,struct piece * stack ){
+        struct piece *curr = board[i][j].stack;
+        board[i][j].stack = malloc(sizeof(piece));
+        board[i][j].stack = stack;
+        board[i][j].stack->next = curr;
+        return board[i][j].stack;
 }
 
 /*
@@ -130,12 +131,12 @@ struct piece * push(int value, struct piece *stack){
  * Output
  * Returns the new top of the stack after the topmost element is removed
  */
-struct piece * pop(struct piece *stack){
-    struct piece *curr = stack;
+struct piece * pop(square board[BOARD_SIZE][BOARD_SIZE],int i,int j, int k, int l){
+    struct piece *curr = board[k][l].stack;
     if(curr!=NULL){
-        stack = curr->next;
-        printf("Stack Data: %d\n", curr->p_color);
+        board[k][l].stack = curr->next;
         free(curr);
     }
-    return stack;
+    push(board,i,j,curr);
+    return board[k][l].stack;
 }
