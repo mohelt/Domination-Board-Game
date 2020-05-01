@@ -80,6 +80,12 @@
 		<Unit filename="C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/game_init.h">
 			<Option target="Focus"/>
 		</Unit>
+		<Unit filename="C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/game_mechanics.c">
+			<Option target="Focus"/>
+		</Unit>
+		<Unit filename="C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/game_mechanics.h">
+			<Option target="Focus"/>
+		</Unit>
 		<Unit filename="C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/input_output.c">
 			<Option target="Focus"/>
 		</Unit>

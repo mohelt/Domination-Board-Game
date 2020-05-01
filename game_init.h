@@ -44,11 +44,12 @@ typedef struct player{
 
 }player;
 
+//structure stack which will hold all pieces
+
 // A piece
 typedef struct piece {
     //the color associated with a piece
     color p_color;
-
     // This is a pointer to the next pieces
     // to create a stack. For this lab you do not have to think too much about it.
     struct piece * next;
@@ -73,9 +74,6 @@ void initialize_players(player players[PLAYERS_NUM]);
 
 //Function to create the board
 void initialize_board(square board[BOARD_SIZE][BOARD_SIZE]);
-
-//Function to create the player turns
-void player_turns(player players[PLAYERS_NUM]);
 
 
 

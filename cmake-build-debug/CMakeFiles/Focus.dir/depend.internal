@@ -4,11 +4,18 @@
 CMakeFiles/Focus.dir/game_init.c.obj
  C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/game_init.c
  C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/game_init.h
+CMakeFiles/Focus.dir/game_mechanics.c.obj
+ C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/game_init.h
+ C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/game_mechanics.c
+ C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/game_mechanics.h
+ C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/input_output.h
 CMakeFiles/Focus.dir/input_output.c.obj
  C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/game_init.h
+ C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/game_mechanics.h
  C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/input_output.c
  C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/input_output.h
 CMakeFiles/Focus.dir/main.c.obj
  C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/game_init.h
+ C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/game_mechanics.h
  C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/input_output.h
  C:/Users/moham/Desktop/AssignmentForSoftwareEngineering2/main.c

@@ -4,11 +4,18 @@
 CMakeFiles/Focus.dir/game_init.c.obj: ../game_init.c
 CMakeFiles/Focus.dir/game_init.c.obj: ../game_init.h
 
+CMakeFiles/Focus.dir/game_mechanics.c.obj: ../game_init.h
+CMakeFiles/Focus.dir/game_mechanics.c.obj: ../game_mechanics.c
+CMakeFiles/Focus.dir/game_mechanics.c.obj: ../game_mechanics.h
+CMakeFiles/Focus.dir/game_mechanics.c.obj: ../input_output.h
+
 CMakeFiles/Focus.dir/input_output.c.obj: ../game_init.h
+CMakeFiles/Focus.dir/input_output.c.obj: ../game_mechanics.h
 CMakeFiles/Focus.dir/input_output.c.obj: ../input_output.c
 CMakeFiles/Focus.dir/input_output.c.obj: ../input_output.h
 
 CMakeFiles/Focus.dir/main.c.obj: ../game_init.h
+CMakeFiles/Focus.dir/main.c.obj: ../game_mechanics.h
 CMakeFiles/Focus.dir/main.c.obj: ../input_output.h
 CMakeFiles/Focus.dir/main.c.obj: ../main.c
 

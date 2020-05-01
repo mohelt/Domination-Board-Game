@@ -11,6 +11,7 @@
 #include <stdbool.h>
 #include "game_init.h"
 
+
 void initialize_players(player players[PLAYERS_NUM]){
 
     // implement here the functionality to initialize the players
@@ -70,6 +71,7 @@ s->num_pieces = 1;
 void initialize_board(square board [BOARD_SIZE][BOARD_SIZE]){
 
     for(int i=0; i< BOARD_SIZE; i++){
+
         for(int j=0; j< BOARD_SIZE; j++){
             //invalid squares
             if((i==0 && (j==0 || j==1 || j==6 || j==7)) ||
@@ -97,39 +99,5 @@ void initialize_board(square board [BOARD_SIZE][BOARD_SIZE]){
     }
 
 
-}
-
-//Function to create the player turns
-void player_turns(player players[PLAYERS_NUM]){
-    bool gameWon = false;
-    if(gameWon == true){
-
-    }
-    int turn = 1;
-
-    while(turn <20)
-    {
-
-        if (players[0].playerTurn == true)
-        {
-            //player One play
-            printf("Player 1 turn:\n");
-            turn++;
-        }
-        else
-        {
-            //player Two play
-            printf("Player 2 turn:\n");
-            turn++;
-        }
-        if (turn % 2 == 0)
-        {
-            players[0].playerTurn = false;
-        }
-        else
-            {
-                players[0].playerTurn = true;
-            }
-    }
 }
 

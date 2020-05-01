@@ -13,12 +13,17 @@ int main() {
     player players[PLAYERS_NUM];
     square board[BOARD_SIZE][BOARD_SIZE];
 
+    //pointer to the top of the stack
+    struct piece *top = NULL;
+    //pointer to the current element of the stack
+    struct piece *curr = NULL;
+
     initialize_players(players);
 
     initialize_board(board);
 
     print_board(board);
 
-    player_turns(players);
+    player_turns(players,board);
     return 0;
 }

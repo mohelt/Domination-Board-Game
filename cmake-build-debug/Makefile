@@ -149,6 +149,33 @@ game_init.c.s:
 	$(MAKE) -f CMakeFiles\Focus.dir\build.make CMakeFiles/Focus.dir/game_init.c.s
 .PHONY : game_init.c.s
 
+game_mechanics.obj: game_mechanics.c.obj
+
+.PHONY : game_mechanics.obj
+
+# target to build an object file
+game_mechanics.c.obj:
+	$(MAKE) -f CMakeFiles\Focus.dir\build.make CMakeFiles/Focus.dir/game_mechanics.c.obj
+.PHONY : game_mechanics.c.obj
+
+game_mechanics.i: game_mechanics.c.i
+
+.PHONY : game_mechanics.i
+
+# target to preprocess a source file
+game_mechanics.c.i:
+	$(MAKE) -f CMakeFiles\Focus.dir\build.make CMakeFiles/Focus.dir/game_mechanics.c.i
+.PHONY : game_mechanics.c.i
+
+game_mechanics.s: game_mechanics.c.s
+
+.PHONY : game_mechanics.s
+
+# target to generate assembly for a file
+game_mechanics.c.s:
+	$(MAKE) -f CMakeFiles\Focus.dir\build.make CMakeFiles/Focus.dir/game_mechanics.c.s
+.PHONY : game_mechanics.c.s
+
 input_output.obj: input_output.c.obj
 
 .PHONY : input_output.obj
@@ -215,6 +242,9 @@ help:
 	@echo ... game_init.obj
 	@echo ... game_init.i
 	@echo ... game_init.s
+	@echo ... game_mechanics.obj
+	@echo ... game_mechanics.i
+	@echo ... game_mechanics.s
 	@echo ... input_output.obj
 	@echo ... input_output.i
 	@echo ... input_output.s
