@@ -78,65 +78,41 @@ bool check_piece_possible(player players[PLAYERS_NUM],square board[BOARD_SIZE][B
         return notChosenPiece;
 }
 
-bool check_move_possible(player players[PLAYERS_NUM],square board[BOARD_SIZE][BOARD_SIZE],int z,int k, int l,bool chosenPlaceToMove) {
-    int i, j;
+bool check_move_possible(player players[PLAYERS_NUM],square board[BOARD_SIZE][BOARD_SIZE],int z,int i, int j,bool chosenPlaceToMove) {
+    int k, l;
     printf("Please enter the row of the piece you would like to move your piece to.(0 - 7)\n");
-    scanf("%d", &i);
+    scanf("%d", &k);
     printf("Please enter the column of the piece you would like to move your piece to. (0 - 7)\n");
-    scanf("%d", &j);
+    scanf("%d", &l);
     bool moveAllowed = true;
-    if (board[i][j].type == VALID) {
-        if (((k - 1) == i) && ((l - 1) == j)) {
-            printf("Illegal diagonal move.\n");
-            moveAllowed = false;
-        }
-        if (((k + 1) == i) && ((l + 1) == j)) {
-            printf("Illegal diagonal move.\n");
-            moveAllowed = false;
-        }
-        if (((k - 1) == i) && ((l + 1) == j)) {
-            printf("Illegal diagonal move.\n");
-            moveAllowed = false;
-        }
-        if (((k + 1) == i) && ((l - 1) == j)) {
-            printf("Illegal diagonal move.\n");
-            moveAllowed = false;
-        }
+    if (board[k][l].type == VALID) {
     }
     else{
         printf("Illegal move. Those squares are not part of the game\n");
     }
     if(moveAllowed == true){
         printf("Successfully chosen a piece.\n");
-        pop(board,i,j,k,l);
+        int value = board[i][j].stack->p_color;
+        push(value,board,k,l);
+        pop(board,i,j);
         chosenPlaceToMove = true;
     }
     return chosenPlaceToMove;
 }
-struct piece * push(square board[BOARD_SIZE][BOARD_SIZE],int i,int j,struct piece * stack ){
-        struct piece *curr = board[i][j].stack;
-        board[i][j].stack = malloc(sizeof(piece));
-        board[i][j].stack = stack;
-        board[i][j].stack->next = curr;
-        return board[i][j].stack;
+struct piece * pop(square board[BOARD_SIZE][BOARD_SIZE], int i, int j){
+    piece *thisPiece;
+    thisPiece = board[i][j].stack;
+    board[i][j].stack->p_color = thisPiece->p_color;
+    board[i][j].stack = board[i][j].stack->next;
+    free(thisPiece);
+
 }
 
-/*
- * This method prints the value of the topmost element of the stack
- * and removes the element from the stack
- *
- * Input
- * top: a pointer to the top of the stack
- *
- * Output
- * Returns the new top of the stack after the topmost element is removed
- */
-struct piece * pop(square board[BOARD_SIZE][BOARD_SIZE],int i,int j, int k, int l){
-    struct piece *curr = board[k][l].stack;
-    if(curr!=NULL){
-        board[k][l].stack = curr->next;
-        free(curr);
-    }
-    push(board,i,j,curr);
-    return board[k][l].stack;
+struct piece * push(int value,square board[BOARD_SIZE][BOARD_SIZE], int k, int l){
+    piece *thisPiece;
+    thisPiece = malloc(sizeof(piece));
+    thisPiece -> p_color = value;
+    thisPiece -> next = board[k][l].stack;
+    board[k][l].stack = thisPiece;
+
 }
