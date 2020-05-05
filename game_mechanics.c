@@ -11,7 +11,7 @@ void player_turns(player players[PLAYERS_NUM],square board[BOARD_SIZE][BOARD_SIZ
     }
     int turn = 1;
 
-    while(turn <5)
+    while(turn <20)
     {
 
         if (players[0].playerTurn == true)
@@ -124,8 +124,6 @@ while (stackOrSingleChosen == false){
 
             if (moveAllowed == true) {
                 printf("Successfully chosen a piece.\n");
-
-
                 push_stack( board, k, l,i,j);
                 pop_stack(board, i, j);
                 chosenPlaceToMove = true;
@@ -141,6 +139,7 @@ while (stackOrSingleChosen == false){
 struct piece * pop(square board[BOARD_SIZE][BOARD_SIZE], int i, int j){
     piece *thisPiece;
     thisPiece = board[i][j].stack;
+    board[i][j].num_pieces = board[i][j].num_pieces -1;
     board[i][j].stack->p_color = thisPiece->p_color;
     board[i][j].stack = board[i][j].stack->next;
     free(thisPiece);
@@ -152,6 +151,7 @@ struct piece * push(int value,square board[BOARD_SIZE][BOARD_SIZE], int k, int l
     thisPiece = malloc(sizeof(piece));
     thisPiece -> p_color = value;
     thisPiece -> next = board[k][l].stack;
+    board[k][l].num_pieces = board[k][l].num_pieces +1;
     board[k][l].stack = thisPiece;
 
 }
@@ -169,12 +169,35 @@ struct piece * pop_stack(square board[BOARD_SIZE][BOARD_SIZE], int i, int j){
 
 struct piece * push_stack(square board[BOARD_SIZE][BOARD_SIZE], int k, int l,int i,int j){
     piece *thisPiece;
+    piece *thisPiece2;
+    piece *toRemove;
+    piece *last = NULL;
+    int count = 1;
     thisPiece = malloc(sizeof(piece));
     thisPiece = board[i][j].stack;
+    thisPiece2 = board[i][j].stack;
     while(thisPiece->next != NULL){
         thisPiece = thisPiece->next;
     }
     thisPiece->next = board[k][l].stack;
     board[k][l].stack = board[i][j].stack;
 
-}
+    while(thisPiece2 != NULL) {
+        if (count < 5) {
+            thisPiece2 = thisPiece2->next;
+            count++;
+        } else {
+            last = thisPiece2;
+        }
+        if (last != NULL) {
+            thisPiece2= thisPiece2->next;
+            while (thisPiece2 != NULL) {
+                toRemove = thisPiece2;
+                thisPiece2 = thisPiece2->next;
+                free(toRemove);
+            }
+            last->next = NULL;
+        }
+
+    }
+    }

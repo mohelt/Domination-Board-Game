@@ -23,10 +23,14 @@ void print_board(square board[BOARD_SIZE][BOARD_SIZE]){
                 if(board[i][j].stack == NULL)
                     printf("|   ");
                 else{
-                    if (board[i][j].stack->p_color == GREEN)
-                        printf("| G ");
 
-                    else printf("| R ");
+                    if (board[i][j].stack->p_color == GREEN){
+                        printf("| G ");}
+
+                    if (board[i][j].stack->p_color == RED){
+                        printf("| R ");
+                    }
+
                 }
             }
             else
