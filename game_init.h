@@ -43,6 +43,7 @@ typedef struct player
     //all the requirements meet on this piece
     char playerName[PLAYER_NAME_MAX_LENGTH];
     int piecesPlayerOwns;
+    int piecesPlayerOwnsReserve;
     int piecesPlayerCaptured;
     bool playerTurn;
 

@@ -26,6 +26,9 @@ void initialize_players(player players[PLAYERS_NUM])
     players[0].piecesPlayerCaptured = 0;
     players[1].piecesPlayerCaptured = 0;
 
+    players[0].piecesPlayerOwnsReserve = 0;
+    players[1].piecesPlayerOwnsReserve = 0;
+
     players[0].piecesPlayerOwns = 18;
     players[1].piecesPlayerOwns = 18;
 

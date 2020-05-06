@@ -16,12 +16,18 @@ void player_turns(player players[PLAYERS_NUM],square board[BOARD_SIZE][BOARD_SIZ
 
     while(gameWon == false)
     {
+        if((players[0].piecesPlayerOwns == 0) || (players[0].piecesPlayerOwns == 0)){
+            gameWon = true;
+        }
 //if its the players turn
         if (players[0].playerTurn == true)
         {
             //player One play
             int z = 0;
             printf("Player 1 turn:\n");
+            printf("Number of Pieces:%d\n",players[z].piecesPlayerOwns);
+            printf("Number of Pieces in Reserves:%d\n",players[z].piecesPlayerOwnsReserve);
+            printf("Number of Pieces Captured:%d\n",players[z].piecesPlayerCaptured);
             //functions which allow player to move
             player_moves(players,board,z);
             print_board(board);
@@ -32,6 +38,9 @@ void player_turns(player players[PLAYERS_NUM],square board[BOARD_SIZE][BOARD_SIZ
             //player Two play
             int z = 1;
             printf("Player 2 turn:\n");
+            printf("Number of Pieces:%d\n",players[z].piecesPlayerOwns);
+            printf("Number of Pieces in Reserves:%d\n",players[z].piecesPlayerOwnsReserve);
+            printf("Number of Pieces Captured:%d\n",players[z].piecesPlayerCaptured);
             //functions which allow player to move
             player_moves(players,board,z);
             print_board(board);
@@ -132,7 +141,7 @@ bool check_move_possible(player players[PLAYERS_NUM],square board[BOARD_SIZE][BO
                 printf("Successfully chosen a piece.\n");
                 int value = board[i][j].stack->p_color;
                 //functions which allow linked lists to
-                push(value,board,k,l);
+                push(players,z,value,board,k,l);
                 pop(board,i,j);
                 chosenPlaceToMove = true;
             }
@@ -161,7 +170,7 @@ bool check_move_possible(player players[PLAYERS_NUM],square board[BOARD_SIZE][BO
                 if (moveAllowed == true)
                 {
                     printf("Successfully chosen a piece.\n");
-                    push_stack( board, k, l,i,j);
+                    push_stack(players,z,board, k, l,i,j);
                     pop_stack(board, i, j);
                     chosenPlaceToMove = true;
                 }
@@ -190,10 +199,14 @@ struct piece * pop(square board[BOARD_SIZE][BOARD_SIZE], int i, int j)
 
 }
 
-struct piece * push(int value,square board[BOARD_SIZE][BOARD_SIZE], int k, int l)
+struct piece * push(player players[PLAYERS_NUM],int z,int value,square board[BOARD_SIZE][BOARD_SIZE], int k, int l)
 {
     //if you want to move just one piece
     piece *thisPiece;
+    piece *thisPiece2;
+    piece *toRemove;
+    piece *last = NULL;
+    int count = 1;
     //allow for dynamic memory
     thisPiece = malloc(sizeof(piece));
     //its value is equal to the piece that was previously chosen
@@ -201,6 +214,46 @@ struct piece * push(int value,square board[BOARD_SIZE][BOARD_SIZE], int k, int l
     //piece under
     thisPiece -> next = board[k][l].stack;
     board[k][l].stack = thisPiece;
+    thisPiece2 = board[k][l].stack;
+    while(thisPiece2 != NULL)
+    {
+        if (count < 5)
+        {
+            thisPiece2 = thisPiece2->next;
+            count++;
+        }
+        else
+        {
+            last = thisPiece2;
+        }
+        if (last != NULL)
+        {
+            thisPiece2= thisPiece2->next;
+            while (thisPiece2 != NULL)
+            {
+                toRemove = thisPiece2;
+                thisPiece2 = thisPiece2->next;
+                if (toRemove->p_color == players[z].player_color)
+                {
+                    players[z].piecesPlayerOwnsReserve++;
+
+                }
+                if (toRemove->p_color != players[z].player_color){
+                    players[z].piecesPlayerCaptured++;
+                    if (z==1){
+                        players[(z-1)].piecesPlayerOwns--;
+                    }
+                    if (z==0){
+                        players[(z+1)].piecesPlayerOwns--;
+                    }
+                }
+
+                free(toRemove);
+            }
+            last->next = NULL;
+        }
+
+    }
 
 }
 struct piece * pop_stack(square board[BOARD_SIZE][BOARD_SIZE], int i, int j)
@@ -220,7 +273,7 @@ struct piece * pop_stack(square board[BOARD_SIZE][BOARD_SIZE], int i, int j)
 
 }
 
-struct piece * push_stack(square board[BOARD_SIZE][BOARD_SIZE], int k, int l,int i,int j)
+struct piece * push_stack(player players[PLAYERS_NUM],int z,square board[BOARD_SIZE][BOARD_SIZE], int k, int l,int i,int j)
 {
     //variable declaration
     piece *thisPiece;
@@ -259,6 +312,21 @@ struct piece * push_stack(square board[BOARD_SIZE][BOARD_SIZE], int k, int l,int
             {
                 toRemove = thisPiece2;
                 thisPiece2 = thisPiece2->next;
+                if (toRemove->p_color == players[z].player_color)
+                {
+                    players[z].piecesPlayerOwnsReserve++;
+
+                }
+                if (toRemove->p_color != players[z].player_color){
+                    players[z].piecesPlayerCaptured++;
+                    if (z==1){
+                        players[(z-1)].piecesPlayerOwns--;
+                    }
+                    if (z==0){
+                        players[(z+1)].piecesPlayerOwns--;
+                    }
+                }
+
                 free(toRemove);
             }
             last->next = NULL;
