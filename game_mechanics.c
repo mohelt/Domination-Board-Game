@@ -4,21 +4,25 @@
 #include "input_output.h"
 #include "game_mechanics.h"
 //Function to create the player turns
-void player_turns(player players[PLAYERS_NUM],square board[BOARD_SIZE][BOARD_SIZE]){
+void player_turns(player players[PLAYERS_NUM],square board[BOARD_SIZE][BOARD_SIZE])
+{
+// if game is won then the game ends
     bool gameWon = false;
-    if(gameWon == true){
+    if(gameWon == true)
+    {
 
     }
     int turn = 1;
 
-    while(turn <20)
+    while(gameWon == false)
     {
-
+//if its the players turn
         if (players[0].playerTurn == true)
         {
             //player One play
             int z = 0;
             printf("Player 1 turn:\n");
+            //functions which allow player to move
             player_moves(players,board,z);
             print_board(board);
             turn++;
@@ -28,10 +32,13 @@ void player_turns(player players[PLAYERS_NUM],square board[BOARD_SIZE][BOARD_SIZ
             //player Two play
             int z = 1;
             printf("Player 2 turn:\n");
+            //functions which allow player to move
             player_moves(players,board,z);
             print_board(board);
             turn++;
         }
+        //allows for turns to alternate
+        //if its modulus of 2 = 0 player on turn else player 2 turn
         if (turn % 2 == 0)
         {
             players[0].playerTurn = false;
@@ -43,73 +50,68 @@ void player_turns(player players[PLAYERS_NUM],square board[BOARD_SIZE][BOARD_SIZ
     }
 }
 //Function to preform player moves
-void player_moves(player players[PLAYERS_NUM],square board[BOARD_SIZE][BOARD_SIZE],int z){
+void player_moves(player players[PLAYERS_NUM],square board[BOARD_SIZE][BOARD_SIZE],int z)
+{
+    //varibale declaration
     int i,j;
     bool notChosenPiece = true;
     bool chosenPlaceToMove = false;
-    while(notChosenPiece) {
+    //while the player hasnt chosen a piece let him choose one
+    while(notChosenPiece)
+    {
         printf("Please enter the row of the piece you would like to move.(0 - 7)\n");
         scanf("%d", &i);
         printf("Please enter the column of the piece you would like to move. (0 - 7)\n");
         scanf("%d", &j);
         notChosenPiece = check_piece_possible(players, board, z, i, j, notChosenPiece);
     }
-    while(chosenPlaceToMove == false) {
+    while(chosenPlaceToMove == false)
+    {
+        //when the player hasnt chosen a piece to move to , let him
         chosenPlaceToMove = check_move_possible(players, board, z, i, j, chosenPlaceToMove);
     }
 }
 
-bool check_piece_possible(player players[PLAYERS_NUM],square board[BOARD_SIZE][BOARD_SIZE],int z,int i, int j,bool notChosenPiece){
-    if(board[i][j].type == VALID) {
-        if (board[i][j].stack == NULL) {
+bool check_piece_possible(player players[PLAYERS_NUM],square board[BOARD_SIZE][BOARD_SIZE],int z,int i, int j,bool notChosenPiece)
+{
+    if(board[i][j].type == VALID)
+    {
+        //if piece is available for player
+        if (board[i][j].stack == NULL)
+        {
             printf("Cannot choose that square. Its empty.\n");
             return notChosenPiece;
         }
-            if (board[i][j].stack->p_color == players[z].player_color){
-                printf("Successfully selected square.\n");
-                notChosenPiece = false;
-            }
-            else{
-                printf("Cannot choose that square. Its not your color.\n");
-            }
+        //if the top piece colour = player color then let the player continue
+        if (board[i][j].stack->p_color == players[z].player_color)
+        {
+            printf("Successfully selected square.\n");
+            notChosenPiece = false;
+        }
+        else
+        {
+            printf("Cannot choose that square. Its not your color.\n");
+        }
     }
-        else{
-                printf("Illegal move. Those squares arent part of the game.\n");
-            }
-        return notChosenPiece;
+    else
+    {
+        printf("Illegal move. Those squares arent part of the game.\n");
+    }
+    return notChosenPiece;
 }
+// after the player chooses a piece to move , check if the place to move it to is possible
+bool check_move_possible(player players[PLAYERS_NUM],square board[BOARD_SIZE][BOARD_SIZE],int z,int i, int j,bool chosenPlaceToMove)
+{
 
-bool check_move_possible(player players[PLAYERS_NUM],square board[BOARD_SIZE][BOARD_SIZE],int z,int i, int j,bool chosenPlaceToMove) {
     bool stackOrSingleChosen = false;
     int a;
-while (stackOrSingleChosen == false){
-    printf("Please enter 0 to move one piece, please enter 1 to move an entire stack \n");
-    scanf("%d", &a);
-    if(a==0){
-        stackOrSingleChosen = true;
-        int k, l;
-        printf("Please enter the row of the piece you would like to move your piece to.(0 - 7)\n");
-        scanf("%d", &k);
-        printf("Please enter the column of the piece you would like to move your piece to. (0 - 7)\n");
-        scanf("%d", &l);
-        bool moveAllowed = true;
-        if (board[k][l].type == VALID) {
-        }
-        else{
-            printf("Illegal move. Those squares are not part of the game\n");
-        }
-
-        if(moveAllowed == true){
-            printf("Successfully chosen a piece.\n");
-            int value = board[i][j].stack->p_color;
-            push(value,board,k,l);
-            pop(board,i,j);
-            chosenPlaceToMove = true;
-        }
-        return chosenPlaceToMove;
-    }
-    if(a==1) {
-        if (board[i][j].stack->next != NULL) {
+    while (stackOrSingleChosen == false)
+    {
+        //check if player wants to move
+        printf("Please enter 0 to move one piece, please enter 1 to move an entire stack \n");
+        scanf("%d", &a);
+        if(a==0)
+        {
             stackOrSingleChosen = true;
             int k, l;
             printf("Please enter the row of the piece you would like to move your piece to.(0 - 7)\n");
@@ -117,81 +119,144 @@ while (stackOrSingleChosen == false){
             printf("Please enter the column of the piece you would like to move your piece to. (0 - 7)\n");
             scanf("%d", &l);
             bool moveAllowed = true;
-            if (board[k][l].type == VALID) {
-            } else {
+            if (board[k][l].type == VALID)
+            {
+            }
+            else
+            {
                 printf("Illegal move. Those squares are not part of the game\n");
             }
 
-            if (moveAllowed == true) {
+            if(moveAllowed == true)
+            {
                 printf("Successfully chosen a piece.\n");
-                push_stack( board, k, l,i,j);
-                pop_stack(board, i, j);
+                int value = board[i][j].stack->p_color;
+                //functions which allow linked lists to
+                push(value,board,k,l);
+                pop(board,i,j);
                 chosenPlaceToMove = true;
             }
             return chosenPlaceToMove;
-        }else{
-            printf("This piece only has one piece pick 0 to move just that piece.\n");
+        }
+        if(a==1)
+        {
+            if (board[i][j].stack->next != NULL)
+            {
+                stackOrSingleChosen = true;
+                int k, l;
+                //choose place on the board to move to
+                printf("Please enter the row of the piece you would like to move your piece to.(0 - 7)\n");
+                scanf("%d", &k);
+                printf("Please enter the column of the piece you would like to move your piece to. (0 - 7)\n");
+                scanf("%d", &l);
+                bool moveAllowed = true;
+                if (board[k][l].type == VALID)
+                {
+                }
+                else
+                {
+                    printf("Illegal move. Those squares are not part of the game\n");
+                }
 
+                if (moveAllowed == true)
+                {
+                    printf("Successfully chosen a piece.\n");
+                    push_stack( board, k, l,i,j);
+                    pop_stack(board, i, j);
+                    chosenPlaceToMove = true;
+                }
+                return chosenPlaceToMove;
+            }
+            else
+            {
+                printf("This piece only has one piece pick 0 to move just that piece.\n");
+
+            }
         }
     }
 }
-}
-struct piece * pop(square board[BOARD_SIZE][BOARD_SIZE], int i, int j){
+struct piece * pop(square board[BOARD_SIZE][BOARD_SIZE], int i, int j)
+{
+    //if you want to move just one piece
     piece *thisPiece;
+    //this piece equals current piece
     thisPiece = board[i][j].stack;
-    board[i][j].num_pieces = board[i][j].num_pieces -1;
+    // color of top piece is equal to colour of the piece chosen
     board[i][j].stack->p_color = thisPiece->p_color;
+    //top piece is now the piece underneath it;
     board[i][j].stack = board[i][j].stack->next;
+    // clear the memory so no memory problems occur
     free(thisPiece);
 
 }
 
-struct piece * push(int value,square board[BOARD_SIZE][BOARD_SIZE], int k, int l){
+struct piece * push(int value,square board[BOARD_SIZE][BOARD_SIZE], int k, int l)
+{
+    //if you want to move just one piece
     piece *thisPiece;
+    //allow for dynamic memory
     thisPiece = malloc(sizeof(piece));
+    //its value is equal to the piece that was previously chosen
     thisPiece -> p_color = value;
+    //piece under
     thisPiece -> next = board[k][l].stack;
-    board[k][l].num_pieces = board[k][l].num_pieces +1;
     board[k][l].stack = thisPiece;
 
 }
-struct piece * pop_stack(square board[BOARD_SIZE][BOARD_SIZE], int i, int j){
-
+struct piece * pop_stack(square board[BOARD_SIZE][BOARD_SIZE], int i, int j)
+{
+    //if person chooses to pop the whole stack
     piece *thisPiece;
     thisPiece = board[i][j].stack;
-    while(thisPiece->next != NULL){
+    while(thisPiece->next != NULL)
+    {
+        //finds the last piece
         thisPiece = thisPiece->next;
     }
+    //top piece is now null
     board[i][j].stack = thisPiece->next;
+    // frees memory so no stack problems
     free(thisPiece);
 
 }
 
-struct piece * push_stack(square board[BOARD_SIZE][BOARD_SIZE], int k, int l,int i,int j){
+struct piece * push_stack(square board[BOARD_SIZE][BOARD_SIZE], int k, int l,int i,int j)
+{
+    //variable declaration
     piece *thisPiece;
     piece *thisPiece2;
     piece *toRemove;
     piece *last = NULL;
     int count = 1;
+    //allows dynamic memory
     thisPiece = malloc(sizeof(piece));
     thisPiece = board[i][j].stack;
     thisPiece2 = board[i][j].stack;
-    while(thisPiece->next != NULL){
+    while(thisPiece->next != NULL)
+    {
+        //finds the last piece of the stack
         thisPiece = thisPiece->next;
     }
+    //next piece of the stack chosen = top piece of stack to move to
     thisPiece->next = board[k][l].stack;
     board[k][l].stack = board[i][j].stack;
-
-    while(thisPiece2 != NULL) {
-        if (count < 5) {
+// implementation to only allow 5 pieces and remove the rest
+    while(thisPiece2 != NULL)
+    {
+        if (count < 5)
+        {
             thisPiece2 = thisPiece2->next;
             count++;
-        } else {
+        }
+        else
+        {
             last = thisPiece2;
         }
-        if (last != NULL) {
+        if (last != NULL)
+        {
             thisPiece2= thisPiece2->next;
-            while (thisPiece2 != NULL) {
+            while (thisPiece2 != NULL)
+            {
                 toRemove = thisPiece2;
                 thisPiece2 = thisPiece2->next;
                 free(toRemove);
@@ -200,4 +265,4 @@ struct piece * push_stack(square board[BOARD_SIZE][BOARD_SIZE], int k, int l,int
         }
 
     }
-    }
+}

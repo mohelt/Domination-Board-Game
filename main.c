@@ -7,7 +7,8 @@
 #include "input_output.h"
 
 
-int main() {
+int main()
+{
 
     // declaration of the players and the board
     player players[PLAYERS_NUM];
@@ -23,7 +24,7 @@ int main() {
     initialize_board(board);
 
     print_board(board);
-
+// main function which allows game to work
     player_turns(players,board);
     return 0;
 }

@@ -15,19 +15,27 @@
  * Valid squares with a GREEN piece are printed as | G |
  * Valid squares with a RED piece are printed as | R | */
 
-void print_board(square board[BOARD_SIZE][BOARD_SIZE]){
+void print_board(square board[BOARD_SIZE][BOARD_SIZE])
+{
     printf("****** The Board ******\n");
-    for(int i = 0; i < BOARD_SIZE; i ++){
-        for (int j = 0; j < BOARD_SIZE; j++){
-            if(board[i][j].type == VALID) {
+    for(int i = 0; i < BOARD_SIZE; i ++)
+    {
+        for (int j = 0; j < BOARD_SIZE; j++)
+        {
+            if(board[i][j].type == VALID)
+            {
                 if(board[i][j].stack == NULL)
                     printf("|   ");
-                else{
+                else
+                {
 
-                    if (board[i][j].stack->p_color == GREEN){
-                        printf("| G ");}
+                    if (board[i][j].stack->p_color == GREEN)
+                    {
+                        printf("| G ");
+                    }
 
-                    if (board[i][j].stack->p_color == RED){
+                    if (board[i][j].stack->p_color == RED)
+                    {
                         printf("| R ");
                     }
 

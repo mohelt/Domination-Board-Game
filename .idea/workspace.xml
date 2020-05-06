@@ -13,13 +13,12 @@
   <component name="ChangeListManager">
     <list default="true" id="a95c042f-4f5e-44cd-99c0-4463cc2710eb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Focus.dir/game_mechanics.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Focus.dir/game_mechanics.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Focus.dir/input_output.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Focus.dir/input_output.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Focus.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Focus.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Focus.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Focus.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_init.c" beforeDir="false" afterPath="$PROJECT_DIR$/game_init.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_init.h" beforeDir="false" afterPath="$PROJECT_DIR$/game_init.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game_mechanics.c" beforeDir="false" afterPath="$PROJECT_DIR$/game_mechanics.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_mechanics.h" beforeDir="false" afterPath="$PROJECT_DIR$/game_mechanics.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/input_output.c" beforeDir="false" afterPath="$PROJECT_DIR$/input_output.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/input_output.h" beforeDir="false" afterPath="$PROJECT_DIR$/input_output.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +83,7 @@
       <workItem from="1587834778012" duration="4809000" />
       <workItem from="1587928749674" duration="649000" />
       <workItem from="1588090698908" duration="28888000" />
-      <workItem from="1588694933894" duration="4859000" />
+      <workItem from="1588694933894" duration="9436000" />
     </task>
     <servers />
   </component>
