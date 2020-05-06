@@ -8,17 +8,20 @@ void player_turns(player players[PLAYERS_NUM],square board[BOARD_SIZE][BOARD_SIZ
 {
 // if game is won then the game ends
     bool gameWon = false;
-    if(gameWon == true)
-    {
 
-    }
     int turn = 1;
 
     while(gameWon == false)
     {
-        if((players[0].piecesPlayerOwns == 0) || (players[0].piecesPlayerOwns == 0)){
+        if((players[0].piecesPlayerOwns == 0) || (players[1].piecesPlayerOwns == 0) ){
+            if(players[1].piecesPlayerOwns == 0){
+                printf("Player 1:%s wins!",players[0].playerName);
+            }
+            if(players[0].piecesPlayerOwns == 0){
+            }
             gameWon = true;
         }
+
 //if its the players turn
         if (players[0].playerTurn == true)
         {
@@ -31,6 +34,8 @@ void player_turns(player players[PLAYERS_NUM],square board[BOARD_SIZE][BOARD_SIZ
             //functions which allow player to move
             player_moves(players,board,z);
             print_board(board);
+            gameWon = see_winner(board,players);
+
             turn++;
         }
         else
@@ -44,6 +49,7 @@ void player_turns(player players[PLAYERS_NUM],square board[BOARD_SIZE][BOARD_SIZ
             //functions which allow player to move
             player_moves(players,board,z);
             print_board(board);
+            gameWon = see_winner(board,players);
             turn++;
         }
         //allows for turns to alternate
@@ -127,7 +133,10 @@ bool check_move_possible(player players[PLAYERS_NUM],square board[BOARD_SIZE][BO
             scanf("%d", &k);
             printf("Please enter the column of the piece you would like to move your piece to. (0 - 7)\n");
             scanf("%d", &l);
+            //check if move legal
+
             bool moveAllowed = true;
+
             if (board[k][l].type == VALID)
             {
             }
@@ -166,7 +175,6 @@ bool check_move_possible(player players[PLAYERS_NUM],square board[BOARD_SIZE][BO
                 {
                     printf("Illegal move. Those squares are not part of the game\n");
                 }
-
                 if (moveAllowed == true)
                 {
                     printf("Successfully chosen a piece.\n");
@@ -334,3 +342,4 @@ struct piece * push_stack(player players[PLAYERS_NUM],int z,square board[BOARD_S
 
     }
 }
+

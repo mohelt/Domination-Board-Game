@@ -12,3 +12,4 @@
 #include "game_mechanics.h"
 //Function to print the board
 void print_board(square board[BOARD_SIZE][BOARD_SIZE]);
+bool see_winner(square board[BOARD_SIZE][BOARD_SIZE],player players[PLAYERS_NUM]);

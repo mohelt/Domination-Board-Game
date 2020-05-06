@@ -47,3 +47,42 @@ void print_board(square board[BOARD_SIZE][BOARD_SIZE])
         printf("|\n");
     }
 }
+bool see_winner(square board[BOARD_SIZE][BOARD_SIZE],player players[PLAYERS_NUM])
+{
+    // functions checks if red or green have a piece at the top of the stack
+    // if not they lose as they cant make a move
+
+    int topPieceRed = 0;
+    int topPieceGreen = 0;
+    printf("****** The Board ******\n");
+    for(int i = 0; i < BOARD_SIZE; i ++)
+    {
+        for (int j = 0; j < BOARD_SIZE; j++)
+        {
+            if(board[i][j].type == VALID)
+            {
+                if(board[i][j].stack == NULL){}
+
+                else{
+                    if (board[i][j].stack->p_color == GREEN)
+                    {
+                        topPieceGreen++;
+                    }
+                    if (board[i][j].stack->p_color == RED)
+                    {
+                        topPieceRed++;
+                    }
+                }
+            }
+        }
+    }
+    if (topPieceGreen==0){
+        printf("Player 1:%s wins!",players[0].playerName);
+        return true;
+    }
+    if (topPieceRed==0){
+        printf("Player 2:%s wins!",players[1].playerName);
+        return true;
+    }
+    return false;
+}

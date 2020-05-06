@@ -17,10 +17,9 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Focus.dir/input_output.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Focus.dir/input_output.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Focus.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Focus.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Focus.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Focus.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_init.c" beforeDir="false" afterPath="$PROJECT_DIR$/game_init.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_init.h" beforeDir="false" afterPath="$PROJECT_DIR$/game_init.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game_mechanics.c" beforeDir="false" afterPath="$PROJECT_DIR$/game_mechanics.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_mechanics.h" beforeDir="false" afterPath="$PROJECT_DIR$/game_mechanics.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input_output.c" beforeDir="false" afterPath="$PROJECT_DIR$/input_output.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input_output.h" beforeDir="false" afterPath="$PROJECT_DIR$/input_output.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +84,7 @@
       <workItem from="1587834778012" duration="4809000" />
       <workItem from="1587928749674" duration="649000" />
       <workItem from="1588090698908" duration="28888000" />
-      <workItem from="1588694933894" duration="13188000" />
+      <workItem from="1588694933894" duration="17733000" />
     </task>
     <servers />
   </component>
@@ -113,22 +112,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="825" y="171" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587835502228" />
-    <state width="725" height="188" key="GridCell.Tab.0.bottom" timestamp="1588731917320">
+    <state width="725" height="188" key="GridCell.Tab.0.bottom" timestamp="1588737048014">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="725" height="188" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588731917320" />
-    <state width="725" height="188" key="GridCell.Tab.0.center" timestamp="1588731917319">
+    <state width="725" height="188" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588737048014" />
+    <state width="725" height="188" key="GridCell.Tab.0.center" timestamp="1588737048013">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="725" height="188" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588731917319" />
-    <state width="725" height="188" key="GridCell.Tab.0.left" timestamp="1588731917319">
+    <state width="725" height="188" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588737048013" />
+    <state width="725" height="188" key="GridCell.Tab.0.left" timestamp="1588737048013">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="725" height="188" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588731917319" />
-    <state width="725" height="188" key="GridCell.Tab.0.right" timestamp="1588731917320">
+    <state width="725" height="188" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588737048013" />
+    <state width="725" height="188" key="GridCell.Tab.0.right" timestamp="1588737048014">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="725" height="188" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588731917320" />
+    <state width="725" height="188" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588737048014" />
     <state x="555" y="59" key="SettingsEditor" timestamp="1587835507028">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
