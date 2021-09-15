@@ -8,6 +8,8 @@ Tools used: CLion
 ![Set Up](https://github.com/mohelt/Domination-Board-Game/blob/master/pic1.PNG?raw=true)
 ![Set Up](https://github.com/mohelt/Domination-Board-Game/blob/master/pic2.PNG?raw=true)
 ![Set Up](https://github.com/mohelt/Domination-Board-Game/blob/master/pic3.PNG?raw=true)
+
+
 Installation:
 ======
 
