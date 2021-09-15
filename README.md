@@ -5,9 +5,9 @@ This project was written for Software Engineering COMP10050, written completely 
 
 Tools used: CLion
 
-![Set Up](https://github.com/mohelt/domination-board-game/blob/main/pic1.PNG?raw=true)
-![Set Up](https://github.com/mohelt/domination-board-game/blob/main/pic2.PNG?raw=true)
-![Set Up](https://github.com/mohelt/domination-board-game/blob/main/pic3.PNG?raw=true)
+![Set Up](https://github.com/mohelt/Domination-Board-Game/blob/master/pic1.PNG?raw=true)
+![Set Up](https://github.com/mohelt/Domination-Board-Game/blob/master/pic2.PNG?raw=true)
+![Set Up](https://github.com/mohelt/Domination-Board-Game/blob/master/pic3.PNG?raw=true)
 Installation:
 ======
 
